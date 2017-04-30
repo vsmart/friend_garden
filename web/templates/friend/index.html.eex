@@ -1,5 +1,3 @@
-<h2>Listing friends</h2>
-
 <table class="table">
   <thead>
     <tr>
@@ -27,4 +25,4 @@
   </tbody>
 </table>
 
-<%= link "New friend", to: friend_path(@conn, :new) %>
+<%= link "add friend 👭", to: friend_path(@conn, :new) %>

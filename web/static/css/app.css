@@ -1,1 +1,13 @@
 /* This file is for your main application css. */
+
+html, body {
+  font-family: Ubuntu, sans-serif;
+  background: #fc987e;
+  color: #212121;
+}
+.wrapper {
+  width: 600px;
+  display: block;
+  margin: auto;
+  background: #fba67d;
+}

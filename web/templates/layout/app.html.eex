@@ -7,25 +7,23 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello FriendGarden!</title>
+    <title>FriendGarden</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
     <div class="container">
       <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
+        <h1>🌱🌱🌱
+          friend
+          garden
+          🌱🌱🌱 </h1>
+     </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
-      <main role="main">
+      <main role="main" class="wrapper">
         <%= render @view_module, @view_template, assigns %>
       </main>
 
