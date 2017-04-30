@@ -1,6 +1,30 @@
-<h1>Friends list</h1>
+<h2>Listing friends</h2>
 
-<%= Enum.each(@friends, fn friend -> %>
-  <p>name: <%= friend.name %></p>
-  <p>status: <%= friend.status %></p>
-<%= end) %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Watering interval</th>
+      <th>Watered at</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for friend <- @friends do %>
+    <tr>
+      <td><%= friend.name %></td>
+      <td><%= friend.watering_interval %></td>
+      <td><%= friend.watered_at %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: friend_path(@conn, :show, friend), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: friend_path(@conn, :edit, friend), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: friend_path(@conn, :delete, friend), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New friend", to: friend_path(@conn, :new) %>

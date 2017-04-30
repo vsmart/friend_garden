@@ -1,0 +1,23 @@
+<h2>Show friend</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @friend.name %>
+  </li>
+
+  <li>
+    <strong>Watering interval:</strong>
+    <%= @friend.watering_interval %>
+  </li>
+
+  <li>
+    <strong>Watered at:</strong>
+    <%= @friend.watered_at %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: friend_path(@conn, :edit, @friend) %>
+<%= link "Back", to: friend_path(@conn, :index) %>
