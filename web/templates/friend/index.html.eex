@@ -1,0 +1,6 @@
+<h1>Friends list</h1>
+
+<%= Enum.each(@friends, fn friend -> %>
+  <p>name: <%= friend.name %></p>
+  <p>status: <%= friend.status %></p>
+<%= end) %>
