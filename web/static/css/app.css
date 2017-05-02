@@ -7,11 +7,13 @@ html, body {
   height:90%;
 }
 
-header {
+header, h1 {
   padding: 10px;
   text-align: center;
   background: white;
   color: #fcb57f;
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
 }
 
 .wrapper {

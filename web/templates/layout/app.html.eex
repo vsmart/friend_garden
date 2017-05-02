@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>FriendGarden</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -30,6 +31,7 @@
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
 
+    <br><br>
     <p class="footer"> Made by <a href=https://franka.tech>Franka</a>.</p>
     <p class="footer"> Find, fork, and contribute to the project on <a href=https://github.com/vsmart/friend_garden>Github</a>.</p>
   </body>
