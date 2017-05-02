@@ -11,3 +11,4 @@
   <% end %>
 </ul>
 <%= link "add friend 👭", to: friend_path(@conn, :new) %>
+

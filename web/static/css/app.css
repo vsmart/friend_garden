@@ -6,12 +6,21 @@ html, body {
   color: #212121;
   height:90%;
 }
+
+header {
+  padding: 10px;
+  text-align: center;
+  background: white;
+  color: #fcb57f;
+}
+
 .wrapper {
   width: 800px;
   height: 100%;
   display: block;
   margin: auto;
-  background: #fba67d;
+  background: white;
+  padding: 10px;
 }
 
 button {
@@ -31,4 +40,10 @@ button {
 
 .plant-img {
   min-width: 150px;
+}
+
+.footer{
+  text-align: center;
+  margin: auto;
+  display: block;
 }
