@@ -1,17 +1,13 @@
-<ul class="flex-container">
-<%= for friend <- @friends do %>
-  <li>
-      <img src="/images/plant.png">A plant</img>
+<ul class="flex-containers">
+  <%= for friend <- @friends do %>
+    <li class="flex-container">
+      <p><img src="/images/plant.png" alt="image of a plant"/></p>
       <p><%= friend.name %></p>
-      <p><%= friend.watering_interval %></p>
-      <p><%= friend.watered_at %></p>
-      <p class="text-right">
-        <%= link "Show", to: friend_path(@conn, :show, friend), class: "btn btn-default btn-xs" %>
+      <p class="text-left">
         <%= link "Edit", to: friend_path(@conn, :edit, friend), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: friend_path(@conn, :delete, friend), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+        <%= link "🗑️", to: friend_path(@conn, :delete, friend), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
       </p>
-  </li>
-<% end %>
+    </li>
+  <% end %>
 </ul>
-
 <%= link "add friend 👭", to: friend_path(@conn, :new) %>
