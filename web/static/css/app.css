@@ -4,10 +4,21 @@ html, body {
   font-family: Ubuntu, sans-serif;
   background: #fc987e;
   color: #212121;
+  height:90%;
 }
 .wrapper {
-  width: 600px;
+  width: 800px;
+  height: 100%;
   display: block;
   margin: auto;
   background: #fba67d;
 }
+
+button {
+  background: #fcd27e;
+}
+
+.flex-container {
+  display: flex;
+}
+
