@@ -28,3 +28,7 @@ button {
   list-style-type: none;
   background: #fcb57f;
 }
+
+.plant-img {
+  min-width: 150px;
+}

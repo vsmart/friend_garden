@@ -1,7 +1,7 @@
 <ul class="flex-containers">
   <%= for friend <- @friends do %>
     <li class="flex-container">
-      <p><img src="/images/plant.png" alt="image of a plant"/></p>
+      <p><img src="/images/plant2.png" alt="image of a plant" class="plant-img"/></p>
       <p><%= friend.name %></p>
       <p class="text-left">
         <%= link "Edit", to: friend_path(@conn, :edit, friend), class: "btn btn-default btn-xs" %>
