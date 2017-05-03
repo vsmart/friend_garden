@@ -1,4 +1,4 @@
-# FriendGarden
+# FriendGarden [![Build Status](https://travis-ci.org/vsmart/friend_garden.svg?branch=travis)](https://travis-ci.org/vsmart/friend_garden)
 
 To start your Phoenix app:
 
