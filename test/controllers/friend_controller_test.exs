@@ -7,7 +7,7 @@ defmodule FriendGarden.FriendControllerTest do
 
   test "lists all entries on index", %{conn: conn} do
     conn = get conn, friend_path(conn, :index)
-    assert html_response(conn, 200) =~ "Listing friends"
+    assert html_response(conn, 200)
   end
 
   test "renders form for new resources", %{conn: conn} do
