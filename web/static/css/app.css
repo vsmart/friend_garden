@@ -44,6 +44,19 @@ button {
   min-width: 150px;
 }
 
+#progressbar {
+  background-color: #FCE5D9;
+  border-radius: 13px; /* (height of inner div) / 2 + padding */
+  padding: 3px;
+}
+
+#progressbar > div {
+  background-color: #3CA764;
+  width: 80%;
+  height: 20px;
+  border-radius: 10px;
+}
+
 .footer{
   text-align: center;
   margin: auto;
