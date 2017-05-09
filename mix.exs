@@ -19,7 +19,7 @@ defmodule FriendGarden.Mixfile do
   def application do
     [mod: {FriendGarden, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :timex]]
   end
 
   # Specifies which paths to compile per environment.

@@ -1,10 +1,12 @@
 defmodule FriendGarden.FriendController do
   use FriendGarden.Web, :controller
+  use Timex
 
   alias FriendGarden.Friend
 
   def index(conn, _params) do
     friends = Repo.all(Friend)
+    friends = update_all_friend_health(friends)
     render(conn, "index.html", friends: friends)
   end
 
@@ -61,5 +63,27 @@ defmodule FriendGarden.FriendController do
     conn
     |> put_flash(:info, "Friend deleted successfully.")
     |> redirect(to: friend_path(conn, :index))
+  end
+
+  defp update_all_friend_health(friends) do
+    Enum.map(friends, fn friend ->
+      friend = %{ friend | :health => calculate_friend_health(friend) }
+    end)
+  end
+
+  # must return a # between 0 and 100
+  defp calculate_friend_health(friend) do
+    IO.inspect friend.watered_at
+    days_since_last_watered = Timex.diff(Timex.today, (friend.watered_at |> Timex.to_date), :days)
+    IO.inspect days_since_last_watered
+    IO.inspect friend.watering_interval
+
+    #health = days_since_last_watered / friend[:watering_interval]
+    health = 2
+    if health > 1 do
+      50
+    else
+      1 - health
+    end
   end
 end
