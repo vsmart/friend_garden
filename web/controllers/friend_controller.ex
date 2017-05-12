@@ -67,23 +67,27 @@ defmodule FriendGarden.FriendController do
 
   defp update_all_friend_health(friends) do
     Enum.map(friends, fn friend ->
-      friend = %{ friend | :health => calculate_friend_health(friend) }
+      %{ friend | :health => calculate_friend_health(friend) }
     end)
   end
 
-  # must return a # between 0 and 100
   defp calculate_friend_health(friend) do
-    IO.inspect friend.watered_at
-    days_since_last_watered = Timex.diff(Timex.today, (friend.watered_at |> Timex.to_date), :days)
-    IO.inspect days_since_last_watered
-    IO.inspect friend.watering_interval
+    last_watered_time = convert_timestamp_to_timex(friend.watered_at)
+    days_since_last_watered = Timex.diff(Timex.today, (last_watered_time |> Timex.to_date), :days)
 
-    #health = days_since_last_watered / friend[:watering_interval]
-    health = 2
+    health = days_since_last_watered / friend.watering_interval
+    IO.puts health
     if health > 1 do
-      50
+      10
     else
-      1 - health
+      (1 - health) * 100
     end
+  end
+
+  defp convert_timestamp_to_timex(ecto_time) do
+    ecto_time
+    |> Ecto.DateTime.dump
+    |> elem(1)
+    |> Timex.DateTime.Helpers.construct("Etc/UTC")
   end
 end
