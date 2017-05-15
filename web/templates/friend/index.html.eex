@@ -4,7 +4,7 @@
       <p><img src="/images/plant3.png" alt="image of a plant" class="plant-img"/></p>
       <p><%= friend.name %></p>
       <div id="progressbar">
-        <div></div>
+        <div style="width:<%= friend.health %>%"></div>
       </div>
       <p class="text-left">
         <%= link "Edit", to: friend_path(@conn, :edit, friend), class: "btn btn-default btn-xs" %>
