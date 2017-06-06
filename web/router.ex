@@ -1,5 +1,6 @@
 defmodule FriendGarden.Router do
   use FriendGarden.Web, :router
+  use Addict.RoutesHelper
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -11,6 +12,10 @@ defmodule FriendGarden.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/" do
+    addict :routes
   end
 
   scope "/", FriendGarden do
