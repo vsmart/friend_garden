@@ -16,7 +16,7 @@ defmodule FriendGarden.Friend do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :watering_interval, :watered_at])
-    |> validate_required([:name, :watering_interval, :watered_at])
+    |> cast(params, [:name, :watering_interval, :watered_at, :user_id])
+    |> validate_required([:name, :watering_interval, :watered_at, :user_id])
   end
 end

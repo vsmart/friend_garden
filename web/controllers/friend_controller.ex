@@ -6,6 +6,7 @@ defmodule FriendGarden.FriendController do
 
   def index(conn, _params) do
     friends = Repo.all(Friend)
+    user = get_session(conn, :current_user)
     friends = update_all_friend_health(friends)
     render(conn, "index.html", friends: friends)
   end
@@ -16,6 +17,8 @@ defmodule FriendGarden.FriendController do
   end
 
   def create(conn, %{"friend" => friend_params}) do
+    current_user = get_session(conn, :current_user)
+    friend_params = Map.put(friend_params, "user_id", current_user.id)
     changeset = Friend.changeset(%Friend{}, friend_params)
 
     case Repo.insert(changeset) do
