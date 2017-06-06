@@ -6,6 +6,7 @@ defmodule FriendGarden.Friend do
     field :watering_interval, :integer
     field :watered_at, Ecto.DateTime
     field :health, :float, virtual: true
+    field :user_id, :integer
 
     timestamps()
   end
