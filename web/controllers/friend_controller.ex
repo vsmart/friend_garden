@@ -2,11 +2,11 @@ defmodule FriendGarden.FriendController do
   use FriendGarden.Web, :controller
   use Timex
 
+  plug Addict.Plugs.Authenticated
   alias FriendGarden.Friend
 
   def index(conn, _params) do
     friends = Repo.all(Friend)
-    user = get_session(conn, :current_user)
     friends = update_all_friend_health(friends)
     render(conn, "index.html", friends: friends)
   end
@@ -79,7 +79,6 @@ defmodule FriendGarden.FriendController do
     days_since_last_watered = Timex.diff(Timex.today, (last_watered_time |> Timex.to_date), :days)
 
     health = days_since_last_watered / friend.watering_interval
-    IO.puts health
     if health > 1 do
       10
     else

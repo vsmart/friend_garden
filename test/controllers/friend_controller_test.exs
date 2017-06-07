@@ -2,8 +2,13 @@ defmodule FriendGarden.FriendControllerTest do
   use FriendGarden.ConnCase
 
   alias FriendGarden.Friend
-  @valid_attrs %{name: "some content", watered_at: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010}, watering_interval: 42}
+  @valid_attrs %{name: "some content", watered_at: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010}, watering_interval: 42, user_id: 1}
   @invalid_attrs %{}
+
+  setup %{conn: conn} do
+    user = Repo.insert(%FriendGarden.User{})
+    conn |> assign(:current_user, user)
+  end
 
   test "lists all entries on index", %{conn: conn} do
     conn = get conn, friend_path(conn, :index)
