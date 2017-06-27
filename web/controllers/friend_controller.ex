@@ -2,12 +2,14 @@ defmodule FriendGarden.FriendController do
   use FriendGarden.Web, :controller
   use Timex
 
+  plug Addict.Plugs.Authenticated
   alias FriendGarden.Friend
 
   def index(conn, _params) do
     friends = Repo.all(Friend)
     friends = update_all_friend_health(friends)
     render(conn, "index.html", friends: friends)
+
   end
 
   def new(conn, _params) do
@@ -16,6 +18,8 @@ defmodule FriendGarden.FriendController do
   end
 
   def create(conn, %{"friend" => friend_params}) do
+    current_user = get_session(conn, :current_user)
+    friend_params = Map.put(friend_params, "user_id", current_user.id)
     changeset = Friend.changeset(%Friend{}, friend_params)
 
     case Repo.insert(changeset) do
@@ -76,7 +80,6 @@ defmodule FriendGarden.FriendController do
     days_since_last_watered = Timex.diff(Timex.today, (last_watered_time |> Timex.to_date), :days)
 
     health = days_since_last_watered / friend.watering_interval
-    IO.puts health
     if health > 1 do
       10
     else

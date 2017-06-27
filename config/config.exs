@@ -25,3 +25,11 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+
+config :addict,
+  secret_key: "24326224313224314142696f6e672f6d33504b4856467a6f694b4f6375",
+  extra_validation: fn ({valid, errors}, user_params) -> {valid, errors} end, # define extra validation here
+  user_schema: FriendGarden.User,
+  repo: FriendGarden.Repo,
+  from_email: "no-reply@example.com", # CHANGE THIS
+mail_service: nil

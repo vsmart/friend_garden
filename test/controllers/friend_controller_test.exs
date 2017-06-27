@@ -2,8 +2,14 @@ defmodule FriendGarden.FriendControllerTest do
   use FriendGarden.ConnCase
 
   alias FriendGarden.Friend
-  @valid_attrs %{name: "some content", watered_at: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010}, watering_interval: 42}
+  @valid_attrs %{name: "some content", watered_at: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010}, watering_interval: 42, user_id: 1}
   @invalid_attrs %{}
+
+  setup do
+    user = %{id: 1, email: nil}
+    conn = Plug.Test. init_test_session(build_conn(), %{current_user: user})
+    {:ok, [conn: conn]}
+  end
 
   test "lists all entries on index", %{conn: conn} do
     conn = get conn, friend_path(conn, :index)
@@ -63,4 +69,52 @@ defmodule FriendGarden.FriendControllerTest do
     assert redirected_to(conn) == friend_path(conn, :index)
     refute Repo.get(Friend, friend.id)
   end
+
+  test "returns 302 on index if not logged in", %{conn: conn} do
+    conn = remove_user(conn)
+    conn = get conn, friend_path(conn, :index)
+    assert html_response(conn, 302)
+  end
+
+  test "returns 302 on show if not logged in", %{conn: conn} do
+    conn = remove_user(conn)
+    friend = Repo.insert! %Friend{}
+    conn = get conn, friend_path(conn, :show, friend)
+    assert html_response(conn, 302)
+  end
+
+  test "returns 302 on edit if not logged in", %{conn: conn} do
+    conn = remove_user(conn)
+    friend = Repo.insert! %Friend{}
+    conn = get conn, friend_path(conn, :edit, friend)
+    assert html_response(conn, 302)
+  end
+
+  test "returns 302 on update if not logged in", %{conn: conn} do
+    conn = remove_user(conn)
+    friend = Repo.insert! %Friend{}
+    conn = get conn, friend_path(conn, :update, friend)
+    assert html_response(conn, 302)
+  end
+
+  test "returns 302 on create if not logged in", %{conn: conn} do
+    conn = remove_user(conn)
+    conn = get conn, friend_path(conn, :create)
+    assert html_response(conn, 302)
+  end
+
+  test "returns 302 on delete if not logged in", %{conn: conn} do
+    conn = remove_user(conn)
+    friend = Repo.insert! %Friend{}
+    conn = get conn, friend_path(conn, :delete, friend)
+    assert html_response(conn, 302)
+  end
+
+  def remove_user(conn) do
+    conn = conn
+           |> fetch_session
+           |> delete_session(:current_user)
+           |> assign(:current_user, nil)
+  end
+
 end
