@@ -6,7 +6,6 @@ defmodule FriendGarden.FriendControllerTest do
   @invalid_attrs %{}
 
   setup do
-    user = Repo.insert!(%FriendGarden.User{})
     user = %{id: 1, email: nil}
     conn = Plug.Test. init_test_session(build_conn(), %{current_user: user})
     {:ok, [conn: conn]}
