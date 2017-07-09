@@ -9,29 +9,6 @@
 
     <title>User Management</title>
     <style type="text/css">
-      /* Base styles */
-      *, *:after, *:before {
-        box-sizing: border-box;
-      }
-      html {
-        font-size: 100%;
-        line-height: 1.5;
-        height: 100%;
-      }
-
-      body {
-        position: relative;
-        margin: 0;
-        font-family: 'Work Sans', Arial, Helvetica, sans-serif;
-        min-height: 100%;
-        background: linear-gradient(to bottom, #A0A0A0 0%, #DEDEDE 100%);
-        color: #777;
-      }
-      img {
-        vertical-align: middle;
-        max-width: 100%;
-      }
-
       /* Container */
       .addict.container {
         position: absolute;

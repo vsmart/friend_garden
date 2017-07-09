@@ -20,13 +20,9 @@
 
 <ul class="flex-containers">
   <li class="flex-container welcome-buttons">
-    <a href=/register>
-      <h4>Sign up</h4>
-    </a>
+    <a href=/register class="button">Sign up</a>
   </li>
   <li class="flex-container welcome-buttons">
-    <a href=/login>
-      <h4>Login</h4>
-    </a>
+    <a href=/login class="button">Login</a>
   </li>
 </ul>
