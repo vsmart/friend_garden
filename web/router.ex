@@ -21,7 +21,7 @@ defmodule FriendGarden.Router do
   scope "/", FriendGarden do
     pipe_through :browser # Use the default browser stack
 
-    get "/", FriendController, :index, as: :root
+    get "/", PageController, :index, as: :root
     resources "/friends", FriendController
   end
 

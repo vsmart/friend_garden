@@ -41,8 +41,12 @@ button {
   background: #fcb57f;
 }
 
+.welcome-buttons {
+  min-width: 120px;
+}
+
 .plant-img {
-  min-width: 150px;
+  min-width: 120px;
 }
 
 #progressbar {
