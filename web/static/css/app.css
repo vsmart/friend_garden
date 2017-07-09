@@ -18,7 +18,7 @@ header, h1 {
 
 .wrapper {
   width: 800px;
-  min-height: 90vh;
+  min-height: 80vh;
   display: block;
   margin: auto;
   background: white;
@@ -39,6 +39,14 @@ button {
   padding: 10px;
   list-style-type: none;
   background: #fcb57f;
+}
+
+.welcome-message {
+  text-align: center;
+  background: #FCE5D9;
+  border-style: solid;
+  border-color: #fcb57f;
+  border-width: 10px;
 }
 
 .welcome-buttons {

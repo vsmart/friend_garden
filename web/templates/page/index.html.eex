@@ -1,7 +1,22 @@
-<div class="jumbotron">
+<div class="welcome-message">
+  <br>
+  <br>
   <h2><%= gettext "Welcome to %{name}", name: "Friend Garden" %></h2>
-  <p class="lead">The place to garden your friendships</p>
+  <p class="lead">The place to garden your friendships and connections.</p>
+  <br>
 </div>
+
+<ul class="flex-containers">
+  <li class="flex-container">
+    <img src="/images/plant3.png"/>
+  </li>
+  <li class="flex-container">
+    <img src="/images/plant3.png"/>
+  </li>
+  <li class="flex-container">
+    <img src="/images/plant3.png"/>
+  </li>
+</ul>
 
 <ul class="flex-containers">
   <li class="flex-container welcome-buttons">
