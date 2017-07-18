@@ -1,9 +1,7 @@
 <div class="welcome-message">
-  <br>
-  <br>
-  <h2><%= gettext "Welcome to %{name}", name: "Friend Garden" %></h2>
-  <p class="lead">The place to garden your friendships and connections.</p>
-  <br>
+  <h2><%= gettext "Welcome to %{name}", name: "Friend Garden!" %></h2>
+  <p class="lead">The place to garden your friendships</p>
+  <p class="lead">Learn more about it how it works <a>here</a>.</p>
 </div>
 
 <ul class="flex-containers">
@@ -18,11 +16,7 @@
   </li>
 </ul>
 
-<ul class="flex-containers">
-  <li class="flex-container welcome-buttons">
-    <a href=/register class="button">Sign up</a>
-  </li>
-  <li class="flex-container welcome-buttons">
-    <a href=/login class="button">Login</a>
-  </li>
-</ul>
+<div class="flex-left">
+  <a href=/register class="button">Sign up</a>
+  <a href=/login class="button">Login</a>
+</div>

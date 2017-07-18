@@ -15,10 +15,10 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <h1>🌱🌱🌱
+        <h1>🌱
           friend
           garden
-          🌱🌱🌱 </h1>
+          🌱 </h1>
      </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

@@ -1,19 +1,28 @@
 /* This file is for your main application css. */
 
-html, body {
-  font-family: Ubuntu, sans-serif;
-  background: #fc987e;
-  color: #212121;
-  height:90%;
+*,*:before,*:after {
+  box-sizing: border-box;
 }
 
-header, h1 {
-  padding: 10px;
-  text-align: center;
+html, body {
+  font-family: Ubuntu, sans-serif;
+  background: #f3d0c7;
+  color: #212121;
+  height:90%;
+  margin:0;
+}
+
+header {
   background: white;
+}
+
+h1 {
+  text-align: center;
   color: #fcb57f;
   font-family: 'Pacifico', cursive;
-  font-size: 50px;
+  font-size: 70px;
+  font-weight: 400;
+  margin: 0 auto 1em;
 }
 
 .wrapper {
@@ -22,35 +31,44 @@ header, h1 {
   display: block;
   margin: auto;
   background: white;
-  padding: 10px;
+  padding: 2em;
 }
 
-button {
-  background: #fcd27e;
+.button {
+  background-color: #fcb57f;
+  padding: 1em 2em;
+  margin-right: 2em;
 }
 
 .flex-containers {
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .flex-container {
-  margin: 10px;
   padding: 10px;
   list-style-type: none;
   background: #fcb57f;
 }
 
+.flex-left {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
 .welcome-message {
   text-align: center;
   background: #FCE5D9;
-/*  border-style: solid;
+  color: #727171;
+  border-style: solid;
   border-color: #fcb57f;
-  border-width: 10px; */
-}
-
-.welcome-buttons {
-  min-width: 120px;
+  border-width: 10px;
+  margin-bottom: 2rem;
+  padding: 1.5em;
 }
 
 .plant-img {
