@@ -29,6 +29,11 @@ a {
   text-decoration: none;
 }
 
+.label {
+  margin: 0.5em 0;
+  text-align: center;
+}
+
 .wrapper {
   width: 800px;
   min-height: 80vh;

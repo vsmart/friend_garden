@@ -1,8 +1,8 @@
 <ul class="flex-containers">
   <%= for friend <- @friends do %>
     <li class="flex-container">
-      <p><img src="/images/plant3.png" alt="image of a plant" class="plant-img"/></p>
-      <p><%= friend.name %></p>
+      <img src="/images/plant3.png" alt="image of a plant" class="plant-img"/>
+      <div class="label"><%= friend.name %></div>
       <div id="progressbar">
         <div style="width:<%= friend.health %>%"></div>
       </div>
