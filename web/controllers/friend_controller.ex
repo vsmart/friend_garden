@@ -9,7 +9,6 @@ defmodule FriendGarden.FriendController do
     friends = Repo.all(Friend)
     friends = update_all_friend_health(friends)
     render(conn, "index.html", friends: friends)
-
   end
 
   def new(conn, _params) do

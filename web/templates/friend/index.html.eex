@@ -13,5 +13,5 @@
     </li>
   <% end %>
 </ul>
-<%= link "add friend 👭", to: friend_path(@conn, :new) %>
+<a href= <%= friend_path(@conn, :new) %> class="button">Add new friend</a>
 

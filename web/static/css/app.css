@@ -25,6 +25,10 @@ h1 {
   margin: 0 auto 1em;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wrapper {
   width: 800px;
   min-height: 80vh;
