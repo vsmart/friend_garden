@@ -1,6 +1,7 @@
 defmodule Addict.AddictView do
-  use Phoenix.HTML
-  use Phoenix.View, root: "web/templates/"
-  import Phoenix.Controller, only: [view_module: 1]
-  import FriendGarden.Router.Helpers
+  import FriendGarden.LayoutView
+
+  def render(a, b) do
+    FriendGarden.LayoutView.render(a, b)
+  end
 end

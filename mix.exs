@@ -39,7 +39,8 @@ defmodule FriendGarden.Mixfile do
      {:gettext, "~> 0.11"},
      {:timex, "~> 3.1"},
      {:cowboy, "~> 1.0"},
-     {:addict, "~> 0.3"},
+     # {:addict, "~> 0.3"},
+     {:addict, github: "vsmart/addict", branch: "template-config", override: true},
      {:mailgun, github: "chrismccord/mailgun", branch: "master", override: true}]
   end
 
