@@ -18,11 +18,11 @@ header {
   color: #fcb57f;
   font-family: 'Pacifico', cursive;
   font-size: 40px;
-  font-weight: 30;
   margin: 0 auto 1em;
 }
 
 h1 {
+  font-weight: 300;
 }
 
 a {
