@@ -15,3 +15,9 @@
 </ul>
 <a href= <%= friend_path(@conn, :new) %> class="button">Add new friend</a>
 
+<p>
+<form method=post action=<%= logout_path(@conn, :logout) %>>
+  <input name="_method" type="hidden" value="delete" />
+  <input type=submit class="button" value="Logout"/>
+</form>
+</p>
