@@ -9,5 +9,4 @@ defmodule FriendGarden.PageController do
       render conn, "index.html"
     end
   end
-
 end
