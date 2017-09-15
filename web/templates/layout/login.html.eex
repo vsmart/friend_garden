@@ -1,9 +1,12 @@
 <h1 style="text-align: center">Login</h1>
 <form method=POST action=<%= login_path(@conn, :login) %>>
-  <input name="email" type="text" id="txt-email" class="addict input" required />
-  <label for="txt-email" class="addict label">E-mail</label>
-  <input name="password" type="password" id="txt-password" class="addict input" required />
-  <label for="txt-password" class="addict label">Password</label>
-  <button id="btn-login" class="addict btn"  >Login</button>
-  <a class="addict link" href="/recover_password">Forgot your password?</a>
+  <label for="txt-email" class="label">
+    E-mail
+    <input name="email" type="text" id="txt-email" class="addict input" required />
+  </label>
+  <label for="txt-password" class="label">
+    Password
+    <input name="password" type="password" id="txt-password" class="addict input" required />
+  </label>
+  <button id="btn-login" class="button">Login</button>
 </form>

@@ -31,7 +31,7 @@ a {
 
 .label {
   margin: 0.5em 0;
-  text-align: center;
+  display: block;
 }
 
 .wrapper {

@@ -1,14 +1,17 @@
 defmodule FriendGarden.FriendController do
   use FriendGarden.Web, :controller
   use Timex
+  alias Addict.Helper
 
   plug Addict.Plugs.Authenticated
   alias FriendGarden.Friend
 
   def index(conn, _params) do
-    friends = Repo.all(Friend)
+    user = Addict.Helper.current_user(conn)
+    friends = Repo.all(from f in Friend, where: f.user_id == ^user.id)
     friends = update_all_friend_health(friends)
-    render(conn, "index.html", friends: friends)
+    csrf_token =  Phoenix.Controller.get_csrf_token
+    render(conn, "index.html", friends: friends, csrf_token: csrf_token)
   end
 
   def new(conn, _params) do

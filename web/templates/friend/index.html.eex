@@ -1,3 +1,4 @@
+<h1>All your friends</h1>
 <ul class="flex-containers">
   <%= for friend <- @friends do %>
     <li class="flex-container">
@@ -5,14 +6,21 @@
       <div class="label"><%= friend.name %></div>
       <div id="progressbar">
         <div style="width:<%= friend.health %>%"></div>
+        <%= friend.health %>%
       </div>
-      <p class="text-left">
+      <form method=post action=<%= friend_path(@conn, :update, friend.id) %>>
+        <input name="_method" type="hidden" value="patch" />
+        <input type=submit class="button" value="Water"/>
+        <input type="hidden" name="_csrf_token" value="<%= @csrf_token %>">
+      </form>
+        <p class="text-left">
         <%= link "Edit", to: friend_path(@conn, :edit, friend), class: "btn btn-default btn-xs" %>
         <%= link "🗑️", to: friend_path(@conn, :delete, friend), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
       </p>
     </li>
   <% end %>
 </ul>
+
 <a href= <%= friend_path(@conn, :new) %> class="button">Add new friend</a>
 
 <p>
