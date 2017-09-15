@@ -44,9 +44,13 @@ a {
 }
 
 .button {
-  background-color: #fcb57f;
+  background-color: hsl(206, 95%, 74%);
   padding: 1em 2em;
   margin-right: 2em;
+  border: none;
+  cursor: pointer;
+  color: hsl(206, 95%, 20%);
+  font-size: 1rem;
 }
 
 .flex-containers {
