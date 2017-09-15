@@ -32,4 +32,5 @@ config :addict,
   user_schema: FriendGarden.User,
   repo: FriendGarden.Repo,
   from_email: "no-reply@example.com", # CHANGE THIS
-mail_service: nil
+  mail_service: nil,
+  base_layout: "app.html"

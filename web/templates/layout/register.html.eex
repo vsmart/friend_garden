@@ -1,0 +1,11 @@
+<h1 style="text-align: center">Register</h1>
+<form method=post action=<%= register_path(@conn, :register) %>>
+  <input name=name type="text" id="txt-name" class="addict input" required />
+  <label for="txt-name" class="addict label">Name</label>
+  <input name=email type="text" id="txt-email" class="addict input" required />
+  <label for="txt-email" class="addict label">E-mail</label>
+  <input name=password type="password" id="txt-password" class="addict input" required />
+  <label for="txt-password" class="addict label">Password</label>
+  <button id="btn-register" class="addict btn">Register</button>
+</form>
+

@@ -14,15 +14,15 @@ html, body {
 
 header {
   background: white;
-}
-
-h1 {
   text-align: center;
   color: #fcb57f;
   font-family: 'Pacifico', cursive;
-  font-size: 70px;
-  font-weight: 400;
+  font-size: 40px;
   margin: 0 auto 1em;
+}
+
+h1 {
+  font-weight: 300;
 }
 
 a {
@@ -31,7 +31,7 @@ a {
 
 .label {
   margin: 0.5em 0;
-  text-align: center;
+  display: block;
 }
 
 .wrapper {
@@ -44,9 +44,13 @@ a {
 }
 
 .button {
-  background-color: #fcb57f;
+  background-color: hsl(206, 95%, 74%);
   padding: 1em 2em;
   margin-right: 2em;
+  border: none;
+  cursor: pointer;
+  color: hsl(206, 95%, 20%);
+  font-size: 1rem;
 }
 
 .flex-containers {

@@ -1,0 +1,12 @@
+<h1 style="text-align: center">Login</h1>
+<form method=POST action=<%= login_path(@conn, :login) %>>
+  <label for="txt-email" class="label">
+    E-mail
+    <input name="email" type="text" id="txt-email" class="addict input" required />
+  </label>
+  <label for="txt-password" class="label">
+    Password
+    <input name="password" type="password" id="txt-password" class="addict input" required />
+  </label>
+  <button id="btn-login" class="button">Login</button>
+</form>
