@@ -50,10 +50,10 @@ defmodule FriendGarden.FriendControllerTest do
     assert html_response(conn, 200) =~ "Edit friend"
   end
 
-  test "updates chosen resource and redirects when data is valid", %{conn: conn} do
+  test "updates chosen resource and redirects to index when data is valid", %{conn: conn} do
     friend = Repo.insert! %Friend{}
     conn = put conn, friend_path(conn, :update, friend), friend: @valid_attrs
-    assert redirected_to(conn) == friend_path(conn, :show, friend)
+    assert redirected_to(conn) == friend_path(conn, :index)
     assert Repo.get_by(Friend, @valid_attrs)
   end
 

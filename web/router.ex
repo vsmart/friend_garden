@@ -10,11 +10,17 @@ defmodule FriendGarden.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :fetch_conn do
+    plug :fetch_session
+    plug :fetch_flash
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
 
   scope "/" do
+    pipe_through :fetch_conn
     addict :routes
   end
 
@@ -24,9 +30,4 @@ defmodule FriendGarden.Router do
     get "/", PageController, :index, as: :root
     resources "/friends", FriendController
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", FriendGarden do
-  #   pipe_through :api
-  # end
 end
