@@ -34,6 +34,10 @@ a {
   display: block;
 }
 
+.img-label {
+  text-align: center;
+}
+
 .header-image {
   height: auto;
   width: 280px;

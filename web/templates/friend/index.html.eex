@@ -1,23 +1,24 @@
-<h1>Your friends</h1>
+<h1>Your Friends</h1>
 <ul class="flex-containers">
   <%= for friend <- @friends do %>
     <li class="flex-container">
       <img src="/images/plant3.png" alt="image of a plant" class="plant-img"/>
-      <div class="label"><%= friend.name %></div>
+      <div class="label img-label"><%= friend.name %></div>
       <div id="progressbar">
         <div style="width:<%= friend.health %>%"></div>
         <%= round(friend.health) %>%
       </div>
+      <span><%= friend.health %>%</span>
       <form method=post action=<%= friend_path(@conn, :update, friend.id) %>>
         <input name="_method" type="hidden" value="patch" />
         <input type=submit class="button" value="Water"/>
         <input type="hidden" name="_csrf_token" value="<%= @csrf_token %>">
-        <input type="hidden" name="friend[watered_at]" value="<%= DateTime.utc_now |> DateTime.to_string %>">
+        <input type="hidden" name="friend[watered_at]" value="<%= now_string() %>">
       </form>
-        <p class="text-left">
-        <%= link "Edit", to: friend_path(@conn, :edit, friend), class: "btn btn-default btn-xs" %>
-        <%= link "🗑️", to: friend_path(@conn, :delete, friend), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-      </p>
+      <div class="flex-left">
+        <%= link "✏️ Edit", to: friend_path(@conn, :edit, friend), class: "btn btn-default btn-xs" %>
+        <%= link "🗑️ Delete", to: friend_path(@conn, :delete, friend), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </div>
     </li>
   <% end %>
 </ul>
