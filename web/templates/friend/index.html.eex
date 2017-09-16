@@ -1,4 +1,4 @@
-<h1>All your friends</h1>
+<h1>Your friends</h1>
 <ul class="flex-containers">
   <%= for friend <- @friends do %>
     <li class="flex-container">

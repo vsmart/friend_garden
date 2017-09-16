@@ -1,10 +1,11 @@
 <div class="title-bar" data-responsive-toggle="my-menu" data-hide-for="medium">
     <div class="flex-left">
-      <img class="header-image" src="images/friendgarden.png" alt="Header image"/>
+      <a href="/">
+        <img class="header-image" src="images/friendgarden.png" alt="Header image"/>
+      </a>
     </div>
     <div class="flex-right">
-      <div>Logged in as <%= Map.get(Addict.Helper.current_user(@conn), :name) ||  Map.get(Addict.Helper.current_user(@conn), :email) %> </div>
-
+      <div class="header-writing">Logged in as <%= Map.get(Addict.Helper.current_user(@conn), :name) ||  Map.get(Addict.Helper.current_user(@conn), :email) %> </div>
       <p>
       <form method=post action=<%= logout_path(@conn, :logout) %>>
         <input name="_method" type="hidden" value="delete" />

@@ -1,3 +1,9 @@
+ <a href="/">
+  <header class="header">
+    <h1>🌱 friend garden 🌱 </h1>
+  </header>
+</a>
+
 <div class="welcome-message">
   <h2><%= gettext "Welcome to %{name}", name: "Friend Garden!" %></h2>
   <p class="lead">The place to garden your friendships</p>

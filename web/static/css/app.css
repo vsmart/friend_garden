@@ -37,7 +37,11 @@ a {
 
 .header-image {
   height: auto;
-  width: 300px;
+  width: 280px;
+}
+
+.header-writing {
+  margin-right: 2em;
 }
 
 .title-bar {
@@ -51,8 +55,7 @@ a {
   display: block;
   margin: auto;
   background: white;
-  padding: 2em;
-  padding-top: 0;
+  padding: 0 2em;
 }
 
 .button {
@@ -83,12 +86,15 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
+  align-items: center;
+  float:left;
 }
 
 .flex-right {
   display: flex;
   flex-wrap: wrap;
   justify-content: right;
+  align-items: center;
 }
 
 .welcome-message {

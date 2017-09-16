@@ -14,27 +14,14 @@
 
   <body>
 
-
-    <%=
-    if Addict.Helper.is_logged_in(@conn) do
+    <%= if Addict.Helper.is_logged_in(@conn) do
       render "navigation_loggedin.html", conn: @conn
     else
       render "navigation.html", conn: @conn
-    end
-    %>
+    end %>
 
     <div class="wrapper">
-      <a href="/">
-        <header class="header">
-          <h1>🌱
-            friend
-            garden
-            🌱
-          </h1>
-        </header>
-      </a>
-
-      <main role="main">
+        <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
     </div>
