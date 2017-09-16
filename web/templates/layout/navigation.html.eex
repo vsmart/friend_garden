@@ -1,0 +1,6 @@
+<div class="title-bar" data-responsive-toggle="my-menu" data-hide-for="medium">
+    <div class="flex-right">
+      <a href=/register class="button">Sign up</a>
+      <a href=/login class="button">Login</a>
+    </div>
+</div>

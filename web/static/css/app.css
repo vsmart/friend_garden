@@ -22,6 +22,7 @@ header {
 }
 
 h1 {
+  margin-top: 0;
   font-weight: 300;
 }
 
@@ -34,13 +35,27 @@ a {
   display: block;
 }
 
+.header-image {
+  height: auto;
+  width: 280px;
+}
+
+.header-writing {
+  margin-right: 2em;
+}
+
+.title-bar {
+  background: white;
+  padding: 1em 0;
+}
+
 .wrapper {
   width: 800px;
   min-height: 80vh;
   display: block;
   margin: auto;
   background: white;
-  padding: 2em;
+  padding: 0 2em;
 }
 
 .button {
@@ -71,6 +86,15 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
+  align-items: center;
+  float:left;
+}
+
+.flex-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  align-items: center;
 }
 
 .welcome-message {
