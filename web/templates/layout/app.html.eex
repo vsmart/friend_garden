@@ -13,6 +13,16 @@
   </head>
 
   <body>
+
+
+    <%=
+    if Addict.Helper.is_logged_in(@conn) do
+      render "navigation_loggedin.html", conn: @conn
+    else
+      render "navigation.html", conn: @conn
+    end
+    %>
+
     <div class="wrapper">
       <a href="/">
         <header class="header">

@@ -15,8 +15,3 @@
     <img src="/images/plant3.png"/>
   </li>
 </ul>
-
-<div class="flex-left">
-  <a href=/register class="button">Sign up</a>
-  <a href=/login class="button">Login</a>
-</div>
