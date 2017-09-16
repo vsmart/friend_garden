@@ -12,6 +12,7 @@
         <input name="_method" type="hidden" value="patch" />
         <input type=submit class="button" value="Water"/>
         <input type="hidden" name="_csrf_token" value="<%= @csrf_token %>">
+        <input type="hidden" name="friend[watered_at]" value="<%= DateTime.utc_now |> DateTime.to_string %>">
       </form>
         <p class="text-left">
         <%= link "Edit", to: friend_path(@conn, :edit, friend), class: "btn btn-default btn-xs" %>
