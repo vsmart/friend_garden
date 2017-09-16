@@ -53,7 +53,7 @@ defmodule FriendGarden.FriendController do
       {:ok, friend} ->
         conn
         |> put_flash(:info, "Friend updated successfully.")
-        |> redirect(to: friend_path(conn, :show, friend))
+        |> redirect(to: friend_path(conn, :index))
       {:error, changeset} ->
         render(conn, "edit.html", friend: friend, changeset: changeset)
     end
