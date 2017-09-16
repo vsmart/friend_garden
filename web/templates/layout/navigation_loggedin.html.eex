@@ -1,7 +1,7 @@
 <div class="title-bar" data-responsive-toggle="my-menu" data-hide-for="medium">
     <span class="flex-left">
       <a href="/">
-        <img class="header-image" src="images/friendgarden.png" alt="Header image"/>
+        <img class="header-image" src="/images/friendgarden.png" alt="Header image"/>
       </a>
     </span>
     <span class="flex-right">
