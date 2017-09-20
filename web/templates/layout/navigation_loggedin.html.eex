@@ -1,9 +1,9 @@
 <div class="title-bar" data-responsive-toggle="my-menu" data-hide-for="medium">
-    <span class="flex-left">
+    <h1 class="flex-left header-logo">
       <a href="/">
-        <img class="header-image" src="/images/friendgarden.png" alt="Header image"/>
+        <img class="header-image" src="/images/friendgarden.png" alt="Friendgarden logo"/>
       </a>
-    </span>
+    </h1>
     <span class="flex-right">
       <div class="header-writing">Logged in as <%= Map.get(Addict.Helper.current_user(@conn), :name) ||  Map.get(Addict.Helper.current_user(@conn), :email) %> </div>
       <p>
