@@ -13,6 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :friend_garden, FriendGarden.Endpoint,
   load_from_system_env: true,
+  http: [port: {:system, "PORT"}],
   url: [scheme: "https", host: "friend-garden.herokuapp.com", port: 443],
   secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE"),
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
