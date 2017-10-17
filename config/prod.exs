@@ -15,7 +15,7 @@ config :friend_garden, FriendGarden.Endpoint,
   load_from_system_env: true,
   url: [scheme: "https", host: "friend-garden.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
-  cache_static_manifest: "priv/static/manifest.json"
+  cache_static_manifest: "priv/static/manifest.json",
   http: [port: {:system, "PORT"}],
   url: [host: "example.com", port: 80],
 
