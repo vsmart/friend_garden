@@ -6,7 +6,7 @@
       <div class="label"><%= friend.name %></div>
       <div id="progressbar">
         <div style="width:<%= friend.health %>%"></div>
-        <%= friend.health %>%
+        <%= round(friend.health) %>%
       </div>
       <form method=post action=<%= friend_path(@conn, :update, friend.id) %>>
         <input name="_method" type="hidden" value="patch" />
