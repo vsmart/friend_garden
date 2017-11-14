@@ -1,9 +1,14 @@
 language: elixir
 elixir:
-  - 1.3.2
+- 1.3.2
 before_install:
-  - mix local.hex --force
-  - mix local.rebar --force
-  - mix do deps.get, deps.compile
+- mix local.hex --force
+- mix local.rebar --force
+- mix do deps.get, deps.compile
 script:
-  - mix test
+- mix test
+deploy:
+  provider: heroku
+  app: friend-garden
+  api_key:
+    secure: mqvlfkMy6q5PAJKe5QXyOP564DjulA9k6QGhgOFt7tShMMDMqDoqU+tGfJp8+umbpRbpyUBfvR7nEHdvgJMyq0OAA7+VT0sJFnbLoyEtucYWwS/fSacJ8kaIQs3PJCrqiKyH9xwpq2RDu8Nk6DfKl1jE0dnIjGW8zhahoQonvwqyOVAON3Wp9Ym/sblQ6tZH71TtzYBfoTBrAlprzJ3/RppkhPsKAtDlQiAADI0NyhyFrPv05phsiffgyn1q9O7336xTl15vlDo2EOV/MGq3PDaMdjxRyPLByX1HIfNWe/zLZGW0db9qn4L/4nw1ycoaUuOegSj4fNTHgL5FmYrpXw7pBw/BbrQd+UxzthM5sr0td46AZWb/BYtMUkKoJpQIPBOAbYwRPsrJCpBo3RbkNVzSWWsmZkIALABniP2iHhaZEl0v+KIiUNzzniLytP+yYK/xDi5UAOIJWy37mPoljNgmeXeUAqwYZ7PyvK6AeS6feZkFjb/qj0KCQ6EOxAsuB5aP31m+vzvqByo9m+iIjeDA+PaThObh0pOSQLr6++ckIcpOPPT9HhwpWbve3GuQXCUn7ssKHazig7/GxZj7VezUhFSr322cqw5JlWoXJrkKgpdQb6dVDLxS1Hb8b1zWDaKAADdlT/zUQ7IeGBmuQRqzr7uFePVkMjPTtfilWBA=
