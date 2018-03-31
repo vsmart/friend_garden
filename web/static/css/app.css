@@ -34,9 +34,17 @@ a {
   display: block;
 }
 
+.img-label {
+  text-align: center;
+}
+
 .header-image {
   height: auto;
   width: 280px;
+}
+
+.header-logo {
+  margin: 0;
 }
 
 .header-writing {
@@ -45,7 +53,7 @@ a {
 
 .title-bar {
   background: white;
-  padding: 1em 0;
+  padding: 1em 1em;
 }
 
 .wrapper {
@@ -60,11 +68,14 @@ a {
 .button {
   background-color: hsl(206, 95%, 74%);
   padding: 1em 2em;
-  margin-right: 2em;
   border: none;
   cursor: pointer;
   color: hsl(206, 95%, 20%);
   font-size: 1rem;
+}
+
+.button ~.button {
+  margin-left: 2em;
 }
 
 .flex-containers {

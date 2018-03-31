@@ -21,7 +21,9 @@ defmodule FriendGarden.FriendController do
 
   def create(conn, %{"friend" => friend_params}) do
     current_user = get_session(conn, :current_user)
-    friend_params = Map.put(friend_params, "user_id", current_user.id)
+    friend_params = friend_params
+                      |> Map.put("user_id", current_user.id)
+                      |> Map.put("watered_at", DateTime.utc_now)
     changeset = Friend.changeset(%Friend{}, friend_params)
 
     case Repo.insert(changeset) do

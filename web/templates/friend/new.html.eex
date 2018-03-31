@@ -1,6 +1,6 @@
 <h2>New friend</h2>
 
-<%= render "form.html", changeset: @changeset,
+<%= render "form_new.html", changeset: @changeset,
                         action: friend_path(@conn, :create) %>
 
 <%= link "Back", to: friend_path(@conn, :index) %>

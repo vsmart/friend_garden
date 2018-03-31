@@ -1,10 +1,10 @@
 <div class="title-bar" data-responsive-toggle="my-menu" data-hide-for="medium">
-    <div class="flex-left">
+    <h1 class="flex-left header-logo">
       <a href="/">
-        <img class="header-image" src="images/friendgarden.png" alt="Header image"/>
+        <img class="header-image" src="/images/friendgarden.png" alt="Friendgarden logo"/>
       </a>
-    </div>
-    <div class="flex-right">
+    </h1>
+    <span class="flex-right">
       <div class="header-writing">Logged in as <%= Map.get(Addict.Helper.current_user(@conn), :name) ||  Map.get(Addict.Helper.current_user(@conn), :email) %> </div>
       <p>
       <form method=post action=<%= logout_path(@conn, :logout) %>>
@@ -12,5 +12,5 @@
         <input type=submit class="button" value="Logout"/>
       </form>
       </p>
-    </div>
+    </span>
 </div>

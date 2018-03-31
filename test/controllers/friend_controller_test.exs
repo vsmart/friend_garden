@@ -2,7 +2,7 @@ defmodule FriendGarden.FriendControllerTest do
   use FriendGarden.ConnCase
 
   alias FriendGarden.Friend
-  @valid_attrs %{name: "some content", watered_at: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010}, watering_interval: 42, user_id: 1}
+  @valid_attrs %{name: "some content", watering_interval: 42, user_id: 1}
   @invalid_attrs %{}
 
   setup do
@@ -28,8 +28,9 @@ defmodule FriendGarden.FriendControllerTest do
   end
 
   test "does not create resource and renders errors when data is invalid", %{conn: conn} do
-    conn = post conn, friend_path(conn, :create), friend: @invalid_attrs
-    assert html_response(conn, 200) =~ "New friend"
+    assert_error_sent 500, fn ->
+      post conn, friend_path(conn, :create), friend: @invalid_attrs
+    end
   end
 
   test "shows chosen resource", %{conn: conn} do
@@ -51,7 +52,7 @@ defmodule FriendGarden.FriendControllerTest do
   end
 
   test "updates chosen resource and redirects to index when data is valid", %{conn: conn} do
-    friend = Repo.insert! %Friend{}
+    friend = Repo.insert! %Friend{ watered_at: Ecto.DateTime.utc }
     conn = put conn, friend_path(conn, :update, friend), friend: @valid_attrs
     assert redirected_to(conn) == friend_path(conn, :index)
     assert Repo.get_by(Friend, @valid_attrs)
